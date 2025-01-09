@@ -9,21 +9,15 @@ end)
 vim.opt.number = true
 vim.opt.wrap = false
 
-if vim.g.neovide then
-	local t = 0.95
-	vim.g.neovide_transparency = t
-	vim.g.neovide_normal_opacity = t
-end
-
 -- wrap markdown files
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	command = "setlocal wrap",
 })
 
-vim.opt.showmode = false
+-- vim.opt.showmode = false
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- clear search highlights
-vim.keymap.set('n', '<Esc>', '<cmd>noh<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>")

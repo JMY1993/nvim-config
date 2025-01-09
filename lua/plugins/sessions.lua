@@ -10,6 +10,7 @@ end
 
 return {
   "rmagatti/auto-session",
+  cond = false,
   config = function()
     require("auto-session").setup({
       suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
