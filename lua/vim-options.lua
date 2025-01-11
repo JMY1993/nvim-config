@@ -40,3 +40,6 @@ vim.api.nvim_create_autocmd(
     end
   }
 )
+
+-- personal config namespace
+vim.g.personal = {}

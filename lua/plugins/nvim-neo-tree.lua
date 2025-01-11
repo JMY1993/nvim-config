@@ -36,13 +36,13 @@ local M = {
 			"n",
 			"<C-n>",
 			":Neotree filesystem reveal float toggle<CR>",
-			{ desc = "Toggle filesystem neotree" }
+			{ desc = "Toggle filesystem neotree", silent = true }
 		)
 		vim.keymap.set(
 			"n",
 			"<leader>ns",
 			":Neotree document_symbols reveal float toggle<CR>",
-			{ desc = "Toggle document symbols in neotree" }
+			{ desc = "Toggle document symbols in neotree", silent = true}
 		)
 	end,
 }

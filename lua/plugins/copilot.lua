@@ -1,5 +1,20 @@
 return {
-	{ "github/copilot.vim" },
+	{
+		"github/copilot.vim",
+		config = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "copilot-chat",
+				callback = function()
+					vim.keymap.set("i", "<c-j>", 'copilot#Accept("<CR>")', {
+            desc = "Accept copilot suggestion only in copilot-chat buffer",
+						silent = true,
+            noremap = true,
+						expr = true,
+					})
+				end,
+			})
+		end,
+	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		dependencies = {

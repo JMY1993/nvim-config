@@ -31,7 +31,7 @@ local TinyInlineDiagnostic = {
 	event = "VeryLazy", -- Or `LspAttach`
 	priority = 1000, -- needs to be loaded in first
 	config = function()
-    vim.diagnostic.config({virtual_text = false})
+		vim.diagnostic.config({ virtual_text = false })
 		require("tiny-inline-diagnostic").setup({
 			preset = "classic",
 		})
@@ -65,17 +65,16 @@ local CmpConf = {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
+				{ name = "nvim_lsp", priority = 1000},
 				-- { name = "nvim_lsp_signature_help" },
 				-- { name = "vsnip" }, -- For vsnip users.
-				{ name = "luasnip" }, -- For luasnip users.
+				{ name = "luasnip", priority = 700}, -- For luasnip users.
 				-- { name = 'ultisnips' }, -- For ultisnips users.
 				-- { name = 'snippy' }, -- For snippy users.
-			}, {
-				{ name = "buffer" },
+				{ name = "buffer", priority = 500},
 			}),
 			formatting = {
 				fields = { "kind", "abbr", "menu" }, -- order of columns,
